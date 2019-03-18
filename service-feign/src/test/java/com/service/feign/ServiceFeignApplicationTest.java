@@ -22,7 +22,7 @@ public class ServiceFeignApplicationTest {
         int playB = 2;
         int playC = playA + playB;
         System.out.println(playC);
-        System.out.println(aaa());
+
 
     }
 
