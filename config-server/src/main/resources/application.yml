@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiezhaokun/config-center
+          search-paths: /**
+          username: xiezhaokun
+          password: xie2011048683
+
+server:
+  port: 8765
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8760/eureka/,http://localhost:8761/eureka/,http://localhost:8759/eureka/
+
