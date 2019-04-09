@@ -1,0 +1,10 @@
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+spring:
+  profiles:
+    active: server-8759
+
+
