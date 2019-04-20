@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    addresses:
+    username:
+    password:
+  cloud:
+    bus:
+      refresh:
+        enabled: true
+
+#encrypt:
+#  key-store:
+#    alias:
+#    location:
+#    password:
+#    secret:
+#  key:
