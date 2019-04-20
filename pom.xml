@@ -15,6 +15,8 @@
 		<module>config-client</module>
 		<module>api-gateway</module>
 		<module>sleuth-service</module>
+		<module>zipkin-server</module>
+		<module>zipkin-client</module>
     </modules>
 	<packaging>pom</packaging>
 
