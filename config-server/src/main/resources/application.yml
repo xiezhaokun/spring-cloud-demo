@@ -7,8 +7,8 @@ spring:
         git:
           uri: https://github.com/xiezhaokun/config-center
           search-paths: /**
-          username: xiezhaokun
-          password: xie2011048683
+          username:
+          password:
 
 server:
   port: 8765
