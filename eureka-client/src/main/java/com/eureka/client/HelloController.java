@@ -30,4 +30,11 @@ public class HelloController {
         messageSenderService.sendMessage(ExchangeNames.NORMAL_EXCHANGE, RoutingKeys.NORMAL_ROUTINGKEY,"测试死信队列！！！！！");
         return "success";
     }
+
+
+    @RequestMapping("sendHeaderMessage")
+    public Object sendHeaderMessage() {
+        messageSenderService.sendHeaderMessage(ExchangeNames.HEADERS_EXCHANGE, "测试headersExchange！！！！！");
+        return "success";
+    }
 }

@@ -2,6 +2,9 @@ package com.eureka.client.rabbitmq.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +33,16 @@ public class MessageSenderService {
         logger.info("== begin sendMessage : " + message + " ==");
         rabbitTemplate.convertAndSend(exchange, routingKey, message);
         logger.info("== end sendMessage : " + message + " ==");
+    }
+
+    public void sendHeaderMessage(final String exchange,final String msg) {
+        rabbitTemplate.convertAndSend(exchange,null, java.util.Optional.ofNullable(msg).get(), new MessagePostProcessor() {
+            @Override
+            public Message postProcessMessage(Message message) throws AmqpException {
+                message.getMessageProperties().getHeaders().put("name","xiezk");
+                return message;
+            }
+        });
     }
 
 }

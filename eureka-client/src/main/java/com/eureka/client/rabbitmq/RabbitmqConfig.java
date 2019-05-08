@@ -65,5 +65,13 @@ public class RabbitmqConfig {
         return new Queue(QueueNames.HEADERS_QUEUE, true, false, false, null);
     }
 
+    @Bean
+    Binding bindingHeaders(Queue headersQueue,HeadersExchange headersExchange) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("name","xiezk");
+        map.put("passport","xzk");
+        return BindingBuilder.bind(headersQueue).to(headersExchange).whereAny(map).match();
+    }
+
 
 }
