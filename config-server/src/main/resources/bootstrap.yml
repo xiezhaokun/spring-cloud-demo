@@ -1,8 +1,9 @@
 spring:
   rabbitmq:
-    addresses:
-    username:
-    password:
+    addresses: 127.0.0.1:5672
+    username: admin
+    password: admin
+    virtual-host: /
   cloud:
     bus:
       refresh:
